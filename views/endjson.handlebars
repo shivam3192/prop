@@ -1,0 +1,81 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<h1>Badge page </h1>
+
+
+<div>
+<table BORDER="200" CELLPADDING="250" CELLSPACING="250" WIDTH="100%" border-width: 15px;>
+  <thead><h1><strong>Student Details</strong></h1></thead>
+  <tbody>
+    <tr>
+      <td><h4>Roll NO</h4> </td>
+      <td><h4>{{result.studentrollno}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Name</h4> </td>
+      <td><h4>{{result.StudentName}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem1 Marks</h4> </td>
+      <td><h4>{{result.studentmarkssem1}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem2 Marks</h4></td>
+      <td><h4>{{result.studentmarkssem2}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem3 Marks</h4></td>
+      <td><h4>{{result.studentmarkssem3}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem4 Marks    </h4> </td>
+      <td><h4>{{result.studentmarkssem4}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Badge Name  </h4> </td>
+      <td><h4>{{result.Badgename}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Badge url      </h4> </td>
+      <td><h4><a onClick="myfunc(this.id)" id="{{result.Badgeurl}}">{{result.Badgeurl}}</a></h4></td>
+      <script type="text/javascript">
+       function myfunc(e){
+          $.cookie("test", e);
+          window.location.replace('/users/image');
+
+        }
+      </script>
+    </tr>
+    <tr>
+      <td><h4>Issued to</h4></td>
+      <td><h4>{{result.Badgeissuedto}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Issued BY </h4></td>
+      <td><h4>{{result.Badgeissuedby}}</h4></td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+
+
+<form method="post" action="/users/success_issuing">
+ 
+
+</form>

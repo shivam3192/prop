@@ -1,0 +1,86 @@
+<h2 class="page-header">Dashboard</h2>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script language="Javascript" type="text/javascript">
+   $.ajax({
+                  url : "/transactions,
+                  //"url: "/state/aarushi",
+                  // Handle as Text
+                  dataType: "text",
+                  success: function(data) 
+                  {
+                      // Parse JSON file
+                      var json = $.parseJSON(data);
+
+
+                      //Store data into a variable
+                      // Display Players
+                      for(var i=1;i<=Number(json.value)+1;i++ )
+                      $("#"+i).prop('disabled', false);
+                       console.log("here"+Number(json.value));
+                     // $('#results').html('Currently there are: ' + json.value ' users');
+                       $('.div_image').html('<img src="json.url" />'); 
+                   }
+      });
+</script>
+
+<p>Welcome to your dashboard</p>  
+<br>
+
+{{!--
+<form action="/transactions" method="post">
+	<div class="form-group">
+	   <label>Cleared </label>
+	<Button type="submit" disabled name="submit" value="1" class="btn btn-default" id="1">Level1</Button>
+<br>
+<br>
+	   <label>Cleared </label>
+	  <Button type="submit" disabled value="2" name="submit" class="btn btn-default" id="2">Level2</Button>
+<br>
+<br>
+	   <label>Cleared </label>
+	  <Button type="submit" disabled value="3" name="submit" class="btn btn-default" id="3">Level3</Button>
+	  </div>
+	  <div class="div_image" align="center">
+	  image here !!
+	  </div>	
+</form>
+--}}
+
+
+<h2 class="page-header">Student Result</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/transactions">
+   <div class="form-group">
+   
+    <label>Roll No</label>
+    <input type="text" class="form-control" placeholder="Roll_No" name="Roll_No">
+  </div>
+   
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="Name">
+  </div>
+  <div class="form-group">
+   <div class="form-group">
+    <label>Sem-1 Credits</label>
+    <input type="text" class="form-control" placeholder="Sem-1" name="Sem_1">
+  </div>
+  <div class="form-group">
+    <label>Sem-2 Credits</label>
+    <input type="text" class="form-control" placeholder="Sem-2" name="Sem_2">
+  </div>
+<div class="form-group">
+    <label>Sem-3 Credits</label>
+    <input type="text" class="form-control" placeholder="Sem-3" name="Sem_3">
+  </div>
+<div class="form-group">
+    <label>Sem-4 Credits</label>
+    <input type="text" class="form-control" placeholder="Sem-4" name="Sem_4">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

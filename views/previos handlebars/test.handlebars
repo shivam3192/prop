@@ -1,0 +1,46 @@
+<h2 class="page-header">Account Login</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("/dummy", function(result){
+            $.each(result, function(i, field){
+		/*var eachrow = "<tr>"
+                 + "<td>" + field[1] + "</td>"
+                 + "<td>" + field[2] + "</td>"
+                 + "</tr>";
+     $('#tbody').append(eachrow);*/
+               $(".c1").append(i+" ");
+		$(".c2").append(field+" ");
+            });
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+{{!--
+<table style="width: 100%">
+     <thead>
+          <tr>
+               <th>title</th>
+               <th>message</th>
+           </tr>
+     </thead>
+     <tbody id="tbody">
+     </tbody>
+</table>
+--}}
+<table border="1">
+	<tr>
+		<td class="c1"></td>
+	</tr>
+	<br></br>
+	<tr>
+		<td class="c2"></td>
+	</tr>
+</table>	
+
+

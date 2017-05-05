@@ -1,0 +1,64 @@
+
+
+
+
+<h2 class="page-header">Dashboard</h2>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<p>Welcome to your dashboard</p>  
+<br>
+
+
+<h2 class="page-header">Issue Badge</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+
+
+<form id = "f" method="post">
+  
+  <div class="form-group">
+
+    <label>Roll No</label>
+    <input type="text" class="form-control" placeholder="Roll_No" name="Roll_No">
+  </div>
+  <button type="button" class="btn btn-default" id="hi" onClick="fun()">Submit</button>
+</form>
+
+<script type="text/javascript">
+function fun(){
+ $.ajax({
+           type: "POST",
+           url: "localhost:3000/state",
+           data: $("#f").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+           }
+         });
+
+};
+
+</script>
+
+<hr />
+<div>
+  <table id="it1">
+    <th>
+      <td>Roll No</td>
+      <td>Name</td>
+      <td>Sem 1</td>
+      <td>Sem 2</td>
+      <td>Sem 3</td>
+      <td>Sem 4</td>
+      <td>Badge Name</td>
+      <td>Badge URL</td>
+      <td>Issued To</td>
+      <td>Issued By</td>
+      </th>
+    </table>
+  </div>

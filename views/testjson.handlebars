@@ -1,0 +1,69 @@
+
+<div>
+<table BORDER="200" CELLPADDING="250" CELLSPACING="250" WIDTH="100%" border-width: 15px;>
+  <thead><h1><strong>Student Details</strong></h1></thead>
+  <tbody>
+    <tr>
+      <td><h4>Roll NO</h4> </td>
+      <td><h4>{{result.studentrollno}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Name</h4> </td>
+      <td><h4>{{result.StudentName}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem1----Marks</h4> </td>
+      <td><h4>{{result.studentmarkssem1}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem2----Marks</h4></td>
+      <td><h4>{{result.studentmarkssem2}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem3----Marks</h4></td>
+      <td><h4>{{result.studentmarkssem3}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Sem4----Marks    </h4> </td>
+      <td><h4>{{result.studentmarkssem4}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Badge Name    </h4> </td>
+      <td><h4>{{result.Badgename}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Badge url      </h4> </td>
+      <td><h4>{{result.Badgeurl}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Issued to</h4></td>
+      <td><h4>{{result.Badgeissuedto}}</h4></td>
+      
+    </tr>
+    <tr>
+      <td><h4>Issued BY </h4></td>
+      <td><h4>{{result.Badgeissuedby}}</h4></td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+<form method="post" action="/badge">
+  <div class="form-group">
+    
+    <input type="text" class="form-control" placeholder="Roll_No" name="Roll_No" value = "{{result.studentrollno}}">
+  </div>
+  <button type="submit" class="btn btn-default">Issue Badge</button>
+</form>

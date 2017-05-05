@@ -1,0 +1,23 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+      <script type="text/javascript">
+       var ID = $.cookie("test");
+       //alert(ID);
+
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $("img").attr("src", ID);
+    });
+
+});
+
+//$("my_image").attr("src","ID");
+//$('.div_image').html('<img src="http://wsl.iiitb.ac.in/wordpress/wp-content/uploads/2016/02/iiitb-logo.png" />');
+        </script>
+
+
+<img src="" ><br>
+
+<button>View the badge of the student</button>
